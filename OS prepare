@@ -1,0 +1,6 @@
+DataCenter installation (sector size; RAID1 System, Log; RAID10 for DB)
+VM installation: version for vhd (.vhdx)
+Language to display (English); time and currency; keyborad
+Standard edt (on Win DataCente)
+Partition on RAID1
+Antivirus install/SQL Exclusions
