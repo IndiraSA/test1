@@ -1,24 +1,25 @@
 --name of months in Bosnian language
-declare @datum as datetime = '2012-01-01'
-declare @i as int
-set @i=1
+DECLARE @datum AS datetime = '2012-01-01'
+DECLARE @i AS int
+SET @i = 1
 
-WHILE @i<=12 
-	BEGIN 
-		SELECT
-			CASE WHEN  MONTH(@datum)=1 THEN 'Januar'
-				 WHEN  MONTH(@datum)=2 THEN 'Februar'
-				 WHEN  MONTH(@datum)=3 THEN 'Mart'
-				 WHEN  MONTH(@datum)=4 THEN 'April'
-				 WHEN  MONTH(@datum)=5 THEN 'Maj'
-				 WHEN  MONTH(@datum)=6 THEN 'Juni'
-				 WHEN  MONTH(@datum)=7 THEN 'Juli'
-				 WHEN  MONTH(@datum)=8 THEN 'Avgust'
-				 WHEN  MONTH(@datum)=9 THEN 'Septembar'
-				 WHEN  MONTH(@datum)=10 THEN 'Oktobar'
-				 WHEN  MONTH(@datum)=11 THEN 'Novembar'
-				 WHEN  MONTH(@datum)=12 THEN 'Decembar'
-			END AS Month_name_inBosnian
-	SET @datum = DATEADD(mm,1,@datum)
-	SET @i= @i+1
-	END
+WHILE @i <= 12
+BEGIN
+  SELECT
+    CASE
+      WHEN MONTH(@datum) = 1 THEN 'Januar'
+      WHEN MONTH(@datum) = 2 THEN 'Februar'
+      WHEN MONTH(@datum) = 3 THEN 'Mart'
+      WHEN MONTH(@datum) = 4 THEN 'April'
+      WHEN MONTH(@datum) = 5 THEN 'Maj'
+      WHEN MONTH(@datum) = 6 THEN 'Juni'
+      WHEN MONTH(@datum) = 7 THEN 'Juli'
+      WHEN MONTH(@datum) = 8 THEN 'Avgust'
+      WHEN MONTH(@datum) = 9 THEN 'Septembar'
+      WHEN MONTH(@datum) = 10 THEN 'Oktobar'
+      WHEN MONTH(@datum) = 11 THEN 'Novembar'
+      WHEN MONTH(@datum) = 12 THEN 'Decembar'
+    END AS Month_name_inBosnian
+  SET @datum = DATEADD(mm, 1, @datum)
+  SET @i = @i + 1
+END
