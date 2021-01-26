@@ -6,19 +6,19 @@ SET @i = 1
 WHILE @i <= 12
 BEGIN
   SELECT
-    CASE
-      WHEN MONTH(@datum) = 1 THEN 'Januar'
-      WHEN MONTH(@datum) = 2 THEN 'Februar'
-      WHEN MONTH(@datum) = 3 THEN 'Mart'
-      WHEN MONTH(@datum) = 4 THEN 'April'
-      WHEN MONTH(@datum) = 5 THEN 'Maj'
-      WHEN MONTH(@datum) = 6 THEN 'Juni'
-      WHEN MONTH(@datum) = 7 THEN 'Juli'
-      WHEN MONTH(@datum) = 8 THEN 'Avgust'
-      WHEN MONTH(@datum) = 9 THEN 'Septembar'
-      WHEN MONTH(@datum) = 10 THEN 'Oktobar'
-      WHEN MONTH(@datum) = 11 THEN 'Novembar'
-      WHEN MONTH(@datum) = 12 THEN 'Decembar'
+    CASE MONTH(@datum)
+      WHEN   1 THEN 'Januar'
+      WHEN   2 THEN 'Februar'
+      WHEN   3 THEN 'Mart'
+      WHEN   4 THEN 'April'
+      WHEN   5 THEN 'Maj'
+      WHEN   6 THEN 'Juni'
+      WHEN   7 THEN 'Juli'
+      WHEN   8 THEN 'Avgust'
+      WHEN   9 THEN 'Septembar'
+      WHEN   10 THEN 'Oktobar'
+      WHEN   11 THEN 'Novembar'
+      WHEN   12 THEN 'Decembar'
     END AS Month_name_inBosnian
   SET @datum = DATEADD(mm, 1, @datum)
   SET @i = @i + 1
