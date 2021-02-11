@@ -34,3 +34,7 @@ DBCC LOGINFO
 DBCC OPENTRAN
 
  DBCC SQLPERF(logspace)
+
+
+
+ transaction log backup, issued a CHECKPOINT and shrink the database log file.
