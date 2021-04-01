@@ -1,0 +1,24 @@
+--main source:https://sqlperformance.com/2013/03/io---subsystem/chunk-deletes
+
+SET NOCOUNT ON;
+ 
+DECLARE @r INT;
+ 
+SET @r = 1;
+ 
+WHILE @r > 0
+BEGIN
+  BEGIN TRANSACTION;
+ 
+  --DELETE TOP (10) -- this will change
+  SELECT TOP (10) *
+   FROM  dbo.TestTable2;  
+ 
+  SET @r = @@ROWCOUNT;
+ 
+  COMMIT TRANSACTION;
+ 
+  -- CHECKPOINT;    -- if simple
+  -- BACKUP LOG ... -- if full
+END
+
